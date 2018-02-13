@@ -125,3 +125,19 @@ describe('2.4.5 - Navegar a heroe desde la lista de heroes', () => {
   });
 
 });
+
+describe('2.4.6 - Navegar a heroe desde la busqueda', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateTo();
+  });
+
+  it('Navegar al heroe RubberMan desde la busqueda', () => {
+    
+    const result = page.navigateToHeroFromSearch('RubberMan');
+    expect(result.getText()).toContain('details!');
+  });
+
+});

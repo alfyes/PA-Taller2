@@ -51,4 +51,9 @@ export class TourOfHeroesPage {
     element.all(by.tagName('button')).last().click();
     return element(by.tagName('h2'));
   }
+
+  navigateToHeroFromSearch(heroName: string){
+    this.searchHero(heroName).first().click();
+    return element(by.tagName('h2'));
+  }
 }
