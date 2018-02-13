@@ -40,4 +40,9 @@ export class TourOfHeroesPage {
     
     element.all(by.tagName('button')).last().click();
   }
+
+  navigateToHeroFromDashboard(posicion: number){
+    element.all(by.css('.module.hero')).all(by.tagName('h4')).get(posicion).click();
+    return element(by.tagName('h2'));
+  }
 }

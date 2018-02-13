@@ -93,3 +93,19 @@ describe('2.4.3 -Editar hero', () => {
   });
 
 });
+
+describe('2.4.4 - Navegar a heroe desde el dashboard', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateTo();
+  });
+
+  it('Navegar al segundo en el dashboard', () => {
+    
+    const result = page.navigateToHeroFromDashboard(1);
+    expect(result.getText()).toContain('details!');
+  });
+
+});
