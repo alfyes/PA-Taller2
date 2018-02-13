@@ -30,4 +30,14 @@ export class TourOfHeroesPage {
   deleteHeroe(){
     this.getAllHeroes().first().element(by.css('.delete')).click();
   }
+
+  updateHero(heroName: string, newHeroName: string){
+    
+    this.searchHero(heroName).first().click();
+    
+    element(by.tagName('input')).clear();
+    element(by.tagName('input')).sendKeys(newHeroName);
+    
+    element.all(by.tagName('button')).last().click();
+  }
 }

@@ -75,3 +75,21 @@ describe('2.4.2 -Eliminar un heroe', () => {
   });
 
 });
+
+describe('2.4.3 -Editar hero', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateTo();
+  });
+
+  it('Editar heroe Zero a One', () => {
+    
+    page.updateHero('Zero','One');
+    const result = page.searchHero('One');
+    expect(result.count()).toBe(1);
+    expect(result.first().getText()).toEqual('One');
+  });
+
+});
