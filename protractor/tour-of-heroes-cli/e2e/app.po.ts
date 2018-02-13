@@ -45,4 +45,10 @@ export class TourOfHeroesPage {
     element.all(by.css('.module.hero')).all(by.tagName('h4')).get(posicion).click();
     return element(by.tagName('h2'));
   }
+
+  navigateToHeroFromList(posicion: number){
+    this.getAllHeroes().get(posicion).click();
+    element.all(by.tagName('button')).last().click();
+    return element(by.tagName('h2'));
+  }
 }

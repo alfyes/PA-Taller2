@@ -109,3 +109,19 @@ describe('2.4.4 - Navegar a heroe desde el dashboard', () => {
   });
 
 });
+
+describe('2.4.5 - Navegar a heroe desde la lista de heroes', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateToHeroes();
+  });
+
+  it('Navegar al cuarto en la lista de heroes', () => {
+    
+    const result = page.navigateToHeroFromList(3);
+    expect(result.getText()).toContain('details!');
+  });
+
+});
