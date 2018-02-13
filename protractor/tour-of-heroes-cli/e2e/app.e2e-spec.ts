@@ -57,3 +57,21 @@ describe('2.4.1 -Buscar heroes', () => {
   });
 
 });
+
+describe('2.4.2 -Eliminar un heroe', () => {
+  let page: TourOfHeroesPage;
+
+  beforeEach(() => {
+    page = new TourOfHeroesPage;
+    page.navigateToHeroes();
+  });
+
+  it('Eliminar el primer heroe de la lista', () => {
+    const canHeroes = page.getAllHeroes().count();
+    
+    page.deleteHeroe();
+
+    expect(page.getAllHeroes().count()).toBe(canHeroes.then(n => n - 1));
+  });
+
+});

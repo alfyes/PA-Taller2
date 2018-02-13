@@ -26,4 +26,8 @@ export class TourOfHeroesPage {
     element(by.id('search-box')).sendKeys(heroName);
     return element.all(by.css('.search-result'));
   }
+
+  deleteHeroe(){
+    this.getAllHeroes().first().element(by.css('.delete')).click();
+  }
 }
