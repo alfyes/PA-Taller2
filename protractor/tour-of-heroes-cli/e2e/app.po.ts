@@ -21,4 +21,9 @@ export class TourOfHeroesPage {
     element(by.tagName('input')).sendKeys(newHero);
     element(by.buttonText('Add')).click();
   }
+
+  searchHero(heroName: string){
+    element(by.id('search-box')).sendKeys(heroName);
+    return element.all(by.css('.search-result'));
+  }
 }
