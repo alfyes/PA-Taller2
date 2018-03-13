@@ -1,7 +1,8 @@
 describe('Los estudiantes login', function() {
 
 	it('Creacion de cuenta con loing existente.', function() {
-        cy.visit('https://losestudiantes.co')
+		cy.visit('https://losestudiantes.co')
+		cy.screenshot('CrearExistenteInicio')
 		cy.contains('Cerrar').click()
 
 		cy.contains('Ingresar').click()
@@ -17,6 +18,7 @@ describe('Los estudiantes login', function() {
 		cy.get('.cajaSignUp').contains('Registrarse').click()
 		cy.wait(2000);
 		cy.contains('Error: Ya existe un usuario registrado con el correo')
+		cy.screenshot('CrearExistenteFin')
 
 	
     })
